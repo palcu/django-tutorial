@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Meta about request{% endblock %}
+
+{% block content %}
+<ul>
+  {% for k, v in values %}
+  <li>{{ k }} - {{ v }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
