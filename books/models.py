@@ -17,11 +17,11 @@ class Author(models.Model):
         return u'%s %s' % (self.first_name, self.last_name)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
-    email = models.EmailField()
+    email = models.EmailField('e-mail', blank=True)
 
 class Book(models.Model):
     def __unicode__(self):
-        return u'%s %s' % (self.first_name, self.last_name)
+        return u'%s' % (self.title)
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
